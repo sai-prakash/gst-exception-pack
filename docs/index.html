@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GST Exception Pack — Design-partner waitlist</title>
+  <meta name="description" content="WhatsApp invoices in. GSTR-ready exception pack out. For freelancers, agencies, and traders under ₹5 Cr. Early design-partner waitlist — not a filing product yet." />
+  <meta name="robots" content="index,follow" />
+  <style>
+    :root {
+      --bg: #0f1419;
+      --surface: #1a222c;
+      --border: #2a3544;
+      --text: #e8eef4;
+      --muted: #9aabbc;
+      --accent: #3dd6c6;
+      --accent-dim: #2a9d8f;
+      --warn: #e9c46a;
+      --danger: #f4a261;
+      --radius: 12px;
+      --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 1.25rem 1.25rem 3rem; }
+    header { padding: 1.5rem 0 0.5rem; }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.02em;
+      color: var(--warn);
+      border: 1px solid #5a4a22;
+      background: #2a2414;
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: clamp(1.65rem, 4.5vw, 2.15rem);
+      line-height: 1.2;
+      margin: 0 0 0.75rem;
+      font-weight: 700;
+    }
+    .sub { color: var(--muted); font-size: 1.05rem; margin: 0 0 1rem; }
+    .honesty {
+      font-size: 0.9rem;
+      color: var(--muted);
+      border-left: 3px solid var(--accent-dim);
+      padding: 0.5rem 0 0.5rem 0.85rem;
+      margin: 1rem 0 1.5rem;
+    }
+    section { margin: 2.25rem 0; }
+    h2 {
+      font-size: 1.15rem;
+      margin: 0 0 0.85rem;
+      color: var(--text);
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.1rem;
+      margin: 0.65rem 0;
+    }
+    .card strong { color: var(--accent); }
+    ol.steps { margin: 0; padding-left: 1.2rem; }
+    ol.steps li { margin: 0.55rem 0; }
+    ul.not { margin: 0; padding-left: 1.2rem; color: var(--muted); }
+    ul.not li { margin: 0.4rem 0; }
+    .cta-box {
+      background: linear-gradient(160deg, #1a2a2e 0%, var(--surface) 60%);
+      border: 1px solid #2f4a4a;
+      border-radius: var(--radius);
+      padding: 1.25rem 1.15rem;
+    }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0.85rem 0 0.35rem;
+    }
+    label .req { color: var(--danger); }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.65rem 0.75rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font: inherit;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid var(--accent-dim);
+      border-color: var(--accent-dim);
+    }
+    .row { display: grid; gap: 0.5rem; }
+    @media (min-width: 560px) {
+      .row.two { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    }
+    button[type="submit"] {
+      margin-top: 1.15rem;
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: none;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #0a1210;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover { filter: brightness(1.05); }
+    button[type="submit"]:disabled { opacity: 0.6; cursor: wait; }
+    .form-note { font-size: 0.8rem; color: var(--muted); margin-top: 0.75rem; }
+    .form-status {
+      display: none;
+      margin-top: 0.85rem;
+      padding: 0.75rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+    .form-status.ok { display: block; background: #143028; border: 1px solid #2a6b55; color: #b8f0d8; }
+    .form-status.err { display: block; background: #2a1a14; border: 1px solid #6b3a2a; color: #f0c8b8; }
+    .mailto-fallback {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .disclaimer {
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 1.25rem;
+      margin-top: 2rem;
+    }
+    footer {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="badge">Design-partner waitlist · Bengaluru / India · Not a filing product yet</span>
+      <h1>WhatsApp invoices in. GSTR-ready exception pack out.</h1>
+      <p class="sub">For freelancers, agencies, and traders under ₹5 Cr — we turn receipt chaos into a clean monthly packet your CA can file from. AI matching + shareable link. Not another Tally or ClearTax.</p>
+      <p class="honesty">Early design-partner stage. Confirmed customers: <strong>0</strong>. No payments enabled. Not a CA; not legal advice.</p>
+    </header>
+
+    <section id="who">
+      <h2>Who it’s for</h2>
+      <div class="card">
+        You’re GST-registered. You file GSTR-1 / 3B (monthly or QRMP). Bills live in WhatsApp, email, and Drive. Your CA’s fee is mostly collation. You fear 2B mismatches and notices — and you don’t want to rebuild books in Zoho.
+      </div>
+    </section>
+
+    <section id="pains">
+      <h2>Three pains we target</h2>
+      <div class="card"><strong>1. Receipt chaos</strong> — Screenshots and PDFs everywhere; CA bills ₹750–5k/mo largely to organise them.</div>
+      <div class="card"><strong>2. GSTR-2B recon hell</strong> — Invoice-level Excel matching, late vendors, ITC timing stress.</div>
+      <div class="card"><strong>3. Notice fear</strong> — 1↔3B mismatches, short reply windows, expensive emergency CA/advocate time.</div>
+    </section>
+
+    <section id="how">
+      <h2>How it works</h2>
+      <div class="card">
+        <ol class="steps">
+          <li><strong>Send</strong> — Forward invoices from WhatsApp / email (or drop a ZIP / CSV).</li>
+          <li><strong>Match</strong> — AI drafts books fields + flags GSTR-1 / 3B / 2B exceptions for you to confirm.</li>
+          <li><strong>Share</strong> — One link packet for your CA (they keep the filing fee; you cut collation time).</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="not">
+      <h2>What this is NOT</h2>
+      <ul class="not">
+        <li>Not a Tally / Zoho Books / ClearTax clone</li>
+        <li>Not auto-submit to GSTN</li>
+        <li>Not e-invoice IRP / e-way bill suite</li>
+        <li>Not legal advice or CA sign-off</li>
+        <li>Not “launched” — design partners only</li>
+      </ul>
+    </section>
+
+    <section id="waitlist">
+      <h2>Join the design-partner waitlist</h2>
+      <div class="cta-box">
+        <!--
+          Waitlist capture: FormSubmit (no API key).
+          Submissions email saiprak@gmail.com after one-time activation.
+          FORM_ENDPOINT can be swapped to Formspree etc. — see SETUP.md.
+        -->
+        <form id="waitlist-form"
+              action="https://formsubmit.co/saiprak@gmail.com"
+              method="POST">
+          <input type="hidden" name="_subject" value="GST Exception Pack — waitlist signup" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_honey" value="" />
+
+          <div class="row two">
+            <div>
+              <label for="name">Name <span class="req">*</span></label>
+              <input id="name" name="name" type="text" required maxlength="120" autocomplete="name" placeholder="Your name" />
+            </div>
+            <div>
+              <label for="email">Email <span class="req">*</span></label>
+              <input id="email" name="email" type="email" required maxlength="200" autocomplete="email" placeholder="you@business.com" />
+            </div>
+          </div>
+
+          <div class="row two">
+            <div>
+              <label for="role">Role <span class="req">*</span></label>
+              <select id="role" name="role" required>
+                <option value="" disabled selected>Select…</option>
+                <option value="freelancer">Freelancer</option>
+                <option value="agency">Agency</option>
+                <option value="trader">Trader / shop</option>
+                <option value="ca">CA / tax professional</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="volume">Monthly invoice volume <span class="req">*</span></label>
+              <select id="volume" name="monthly_invoice_volume" required>
+                <option value="" disabled selected>Select…</option>
+                <option value="1-20">1–20 invoices</option>
+                <option value="21-50">21–50</option>
+                <option value="51-200">51–200</option>
+                <option value="200+">200+</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="gstin">GSTIN <span style="font-weight:400">(optional)</span></label>
+          <input id="gstin" name="gstin" type="text" maxlength="15" pattern="[0-9A-Z]{15}" title="15-character GSTIN if you have one" placeholder="22AAAAA0000A1Z5" autocomplete="off" />
+
+          <label for="note">Note <span style="font-weight:400">(optional)</span></label>
+          <textarea id="note" name="note" rows="3" maxlength="500" placeholder="e.g. use WhatsApp bills + CA today"></textarea>
+
+          <button type="submit" id="submit-btn">Join waitlist</button>
+          <p class="form-note">We’ll email only about design-partner pilots — no spam, no fake launch hype. No payments on this page.</p>
+        </form>
+        <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+        <p class="mailto-fallback">
+          Prefer email? Write
+          <a id="mailto-link" href="mailto:saiprak@gmail.com?subject=GST%20Exception%20Pack%20waitlist">saiprak@gmail.com</a>
+          with your name, role, and rough monthly invoice count.
+        </p>
+      </div>
+    </section>
+
+    <p class="disclaimer">
+      Not a Chartered Accountant. Not legal or tax advice. We do not file returns for you. This is an early design-partner waitlist for a narrow AI tool that prepares exception packs and CA share links. Regulatory rules change — confirm filings with a qualified CA. Confirmed customers: 0.
+    </p>
+
+    <footer>
+      GST Exception Pack · Sai Prakash · Bengaluru ·
+      <a href="https://github.com/sai-prakash/gst-exception-pack">Source</a>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      // Swap this to a Formspree/Getform URL later without rewriting the page — see SETUP.md
+      var FORM_ENDPOINT = "https://formsubmit.co/ajax/saiprak@gmail.com";
+
+      var form = document.getElementById("waitlist-form");
+      var statusEl = document.getElementById("form-status");
+      var btn = document.getElementById("submit-btn");
+
+      form.setAttribute("action", FORM_ENDPOINT.replace("/ajax/", "/"));
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        statusEl.className = "form-status";
+        statusEl.textContent = "";
+        btn.disabled = true;
+        btn.textContent = "Sending…";
+
+        var data = new FormData(form);
+
+        fetch(FORM_ENDPOINT, {
+          method: "POST",
+          body: data,
+          headers: { Accept: "application/json" }
+        })
+          .then(function (res) {
+            return res.json().then(function (body) {
+              return { ok: res.ok, status: res.status, body: body };
+            }).catch(function () {
+              return { ok: res.ok, status: res.status, body: null };
+            });
+          })
+          .then(function (result) {
+            // Only treat an explicit success from the backend as saved.
+            // (FormSubmit answers success:"false" until the inbox owner activates the form.)
+            var b = result.body || {};
+            if (result.ok && (b.success === "true" || b.success === true || b.ok === true)) {
+              statusEl.className = "form-status ok";
+              statusEl.textContent = "You’re on the list. We’ll email only about design-partner pilots — no spam, no fake “launch” hype.";
+              form.reset();
+            } else {
+              throw new Error((result.body && (result.body.message || result.body.error)) || ("HTTP " + result.status));
+            }
+          })
+          .catch(function (err) {
+            statusEl.className = "form-status err";
+            statusEl.innerHTML = "Could not save — please try again, or email <a href=\"mailto:saiprak@gmail.com?subject=GST%20Exception%20Pack%20waitlist\">saiprak@gmail.com</a> with your name, role, and rough monthly invoice count.";
+            if (window.console) console.warn("waitlist submit failed:", err && err.message);
+          })
+          .finally(function () {
+            btn.disabled = false;
+            btn.textContent = "Join waitlist";
+          });
+      });
+    })();
+  </script>
+</body>
+</html>
